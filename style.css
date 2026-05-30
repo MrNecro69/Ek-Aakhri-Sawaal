@@ -6,11 +6,18 @@
 
 body{
   min-height:100vh;
-  background:
-  radial-gradient(circle at top,#ffb6d9,#ffdde9,#fff0f6);
-  font-family:Arial,sans-serif;
+  font-family:'Poppins',sans-serif;
   overflow-x:hidden;
   color:white;
+
+  background:
+  linear-gradient(
+  180deg,
+  #030712 0%,
+  #081124 40%,
+  #111827 100%
+  );
+
   display:flex;
   justify-content:center;
   align-items:center;
@@ -18,125 +25,263 @@ body{
   position:relative;
 }
 
-/* Floating Hearts */
+/* Moon */
+
 body::before{
-  content:"💕 💖 💗 💞 💓";
+  content:"";
   position:fixed;
-  top:-20px;
-  left:0;
-  width:100%;
-  font-size:30px;
-  animation:floatHearts 12s linear infinite;
-  opacity:0.4;
+
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  top:40px;
+  right:30px;
+
+  background:#ffffff;
+
+  box-shadow:
+  0 0 40px rgba(255,255,255,.8),
+  0 0 80px rgba(255,255,255,.5),
+  0 0 140px rgba(255,255,255,.3);
+
+  opacity:.95;
+
+  z-index:0;
 }
 
-@keyframes floatHearts{
-  0%{
-    transform:translateY(100vh);
+/* Stars */
+
+.star{
+  position:fixed;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+
+  0%,100%{
+    opacity:.2;
   }
 
-  100%{
-    transform:translateY(-120vh);
+  50%{
+    opacity:1;
   }
 }
+
+/* Glass Card */
 
 .container{
+
   width:100%;
-  max-width:520px;
+  max-width:420px;
+
   text-align:center;
-  background:rgba(255,255,255,0.12);
+
+  background:
+  rgba(255,255,255,.08);
+
   backdrop-filter:blur(18px);
-  border-radius:35px;
-  padding:35px 25px;
+
+  border:
+  1px solid rgba(255,255,255,.12);
+
+  border-radius:34px;
+
+  padding:28px;
+
   box-shadow:
-  0 0 50px rgba(255,105,180,0.25),
-  0 0 120px rgba(255,182,193,0.15);
+  0 10px 40px rgba(0,0,0,.35);
+
   position:relative;
+  z-index:2;
 }
 
-/* Romantic Glow */
-.container::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  border-radius:35px;
-  padding:2px;
-  background:linear-gradient(
-  45deg,
-  #ff8dc7,
-  #ffc1da,
-  #ff9ccf
-  );
-  -webkit-mask:
-  linear-gradient(#fff 0 0) content-box,
-  linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-}
-
-h1{
-  font-size:58px;
-  margin-bottom:20px;
-  color:#ff4f9f;
-  text-shadow:
-  0 0 15px rgba(255,105,180,0.5),
-  0 0 30px rgba(255,182,193,0.3);
-}
+/* Image */
 
 .hero-img{
+
   width:100%;
-  border-radius:30px;
-  margin-bottom:30px;
-  box-shadow:0 0 40px rgba(255,105,180,0.35);
+  height:250px;
+
+  object-fit:cover;
+
+  border-radius:26px;
+
+  margin-bottom:22px;
 }
 
-.shayari p,
-.letter p{
-  font-size:19px;
+/* Heading */
+
+h1{
+
+  font-size:42px;
+
+  margin-bottom:20px;
+
+  font-weight:700;
+
+  background:
+  linear-gradient(
+  to right,
+  #fda4af,
+  #fbcfe8
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Shayari */
+
+.shayari p{
+
+  color:#f8fafc;
+
+  font-size:18px;
+
   line-height:1.9;
-  color:#fff;
+
   margin-bottom:18px;
 }
 
+/* Letter */
+
 .letter{
-  background:rgba(255,255,255,0.15);
-  border-radius:25px;
-  padding:25px;
-  margin-bottom:25px;
-  box-shadow:0 0 30px rgba(255,182,193,0.25);
+
+  background:
+  rgba(255,255,255,.06);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  border-radius:22px;
+
+  padding:22px;
 }
 
+.letter p{
+
+  color:#f8fafc;
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  text-align:left;
+
+  margin-bottom:15px;
+}
+
+/* Buttons */
+
 .buttons{
+
   display:flex;
-  gap:15px;
-  justify-content:center;
-  flex-wrap:wrap;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  margin-top:22px;
 }
 
 button{
+
+  width:100%;
+
   border:none;
-  padding:16px 34px;
-  border-radius:50px;
-  font-size:18px;
+
+  border-radius:999px;
+
+  padding:16px;
+
+  font-size:16px;
+
+  font-weight:600;
+
   cursor:pointer;
-  transition:0.3s;
+
+  transition:.3s;
 }
 
 button:hover{
-  transform:scale(1.06);
+  transform:translateY(-2px);
 }
 
 .yes{
-  background:linear-gradient(to right,#ff4f9f,#ff75b5);
+
+  background:
+  linear-gradient(
+  to right,
+  #ec4899,
+  #f43f5e
+  );
+
   color:white;
-  box-shadow:0 0 30px rgba(255,105,180,0.4);
 }
 
 .no{
+
   background:white;
-  color:#ff4f9f;
+
+  color:#111827;
 }
 
-.enter-btn{
-  background:linear-gradient(to right,#ff4f9f,#ff75b5);
+.music-btn{
+
+  margin-bottom:18px;
+
+  background:
+  linear-gradient(
+  to right,
+  #ec4899,
+  #f43f5e
+  );
+
   color:white;
 }
+
+/* Mobile */
+
+@media(max-width:420px){
+
+  h1{
+    font-size:34px;
+  }
+
+  .shayari p{
+    font-size:16px;
+  }
+
+  .hero-img{
+    height:220px;
+  }
+
+}
+</body>
+<script>
+
+for(let i=0;i<80;i++){
+
+  let star=document.createElement("div");
+
+  star.className="star";
+
+  let size=Math.random()*3;
+
+  star.style.width=size+"px";
+  star.style.height=size+"px";
+
+  star.style.left=Math.random()*100+"vw";
+  star.style.top=Math.random()*100+"vh";
+
+  star.style.animationDelay=
+  Math.random()*4+"s";
+
+  document.body.appendChild(star);
+}
+
+</script>
