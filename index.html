@@ -2,107 +2,262 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HER ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Under The Same Sky ❤️</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    html,
-    body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: 'Poppins', sans-serif;
-      background: #fff4f8;
-      color: white;
-    }
+<style>
 
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, #ffc1dc 0%, #ffddeb 35%, #fff4f8 100%);
-      position: relative;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    /* Floating Blur Lights */
+body{
+font-family:'Poppins',sans-serif;
+background:
+linear-gradient(
+180deg,
+#030712 0%,
+#081124 40%,
+#111827 100%
+);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
 
-    .blur1,
-    .blur2,
-    .blur3 {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(90px);
-      z-index: 0;
-      opacity: 0.5;
-    }
+/* Stars */
 
-    .blur1 {
-      width: 240px;
-      height: 240px;
-      background: #ff7eb6;
-      top: -40px;
-      left: -50px;
-    }
+.star{
+position:fixed;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+opacity:.7;
+}
 
-    .blur2 {
-      width: 220px;
-      height: 220px;
-      background: #ffb7d6;
-      bottom: 0;
-      right: -60px;
-    }
+@keyframes twinkle{
+0%,100%{opacity:.2}
+50%{opacity:1}
+}
 
-    .blur3 {
-      width: 180px;
-      height: 180px;
-      background: #ffd6e9;
-      top: 45%;
-      left: 45%;
-      transform: translate(-50%, -50%);
-    }
+/* Moon */
 
-    /* Floating Hearts */
+.moon{
+position:fixed;
+top:60px;
+right:40px;
+width:120px;
+height:120px;
+border-radius:50%;
+background:#f8fafc;
+box-shadow:
+0 0 40px rgba(255,255,255,.7),
+0 0 120px rgba(255,255,255,.4);
+}
 
-    .heart {
-      position: fixed;
-      bottom: -30px;
-      color: rgba(255, 77, 148, 0.35);
-      animation: floatUp linear infinite;
-      z-index: 0;
-      user-select: none;
-    }
+/* Main */
 
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) scale(0.8);
-        opacity: 0;
-      }
+.page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
 
-      20% {
-        opacity: 1;
-      }
+.card{
+width:100%;
+max-width:430px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.12);
+border-radius:32px;
+padding:24px;
+text-align:center;
+box-shadow:
+0 10px 40px rgba(0,0,0,.35);
+}
 
-      to {
-        transform: translateY(-120vh) scale(1.4);
-        opacity: 0;
-      }
-    }
+.hero{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:24px;
+margin-bottom:22px;
+}
 
-    /* Main Wrapper */
+h1{
+font-size:38px;
+margin-bottom:18px;
+font-weight:700;
+background:
+linear-gradient(
+to right,
+#fda4af,
+#fbcfe8
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-    .page {
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
+.shayari{
+min-height:220px;
+font-size:18px;
+line-height:1.9;
+color:#f8fafc;
+margin-bottom:20px;
+}
+
+.music-btn,
+.btn{
+width:100%;
+border:none;
+border-radius:999px;
+padding:16px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+margin-top:12px;
+}
+
+.music-btn{
+background:
+linear-gradient(
+to right,
+#ec4899,
+#f43f5e
+);
+color:white;
+}
+
+.yes{
+background:
+linear-gradient(
+to right,
+#ec4899,
+#f43f5e
+);
+color:white;
+}
+
+.no{
+background:white;
+color:#111827;
+}
+
+.hidden{
+display:none;
+}
+
+.letter{
+text-align:left;
+line-height:1.9;
+font-size:16px;
+color:#f8fafc;
+}
+
+.signature{
+margin-top:20px;
+text-align:right;
+color:#fbcfe8;
+font-weight:600;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<audio id="bgMusic" loop>
+<source src="meri-banogi-kya.mp3" type="audio/mp3">
+</audio>
+
+<section class="page" id="home">
+
+<div class="card">
+
+<img
+class="hero"
+src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=1200&auto=format&fit=crop"
+>
+
+<h1>HER ❤️</h1>
+
+<div class="shayari" id="typewriter"></div>
+
+<button class="music-btn" onclick="startExperience()">
+🎵 Start The Feelings
+</button>
+
+</div>
+
+</section>
+
+<section class="page hidden" id="proposal">
+
+<div class="card">
+
+<h1>Under The Same Sky 🌙</h1>
+
+<div class="letter">
+
+<p>
+I don't promise perfection.
+</p>
+
+<p>
+I promise honesty.
+</p>
+
+<p>
+I promise loyalty.
+</p>
+
+<p>
+I promise that when life becomes difficult,
+I won't disappear.
+</p>
+
+<p>
+I will stay.
+</p>
+
+<p>
+I will listen.
+</p>
+
+<p>
+And every day,
+I'll try to become a man worthy
+of your trust.
+</p>
+
+<p>
+HER,
+will you let me be part of your story? ❤️
+</p>
+
+</div>
+
+<button class="btn yes" onclick="showYes()">
+Yes ❤️
+</button>
+
+<button class="btn no" onclick="showNo()">
+No 🌙
+</button>
+
+</div>
+
+</section>      display: flex;
       justify-content: center;
       align-items: center;
       padding: 22px;
